@@ -28,5 +28,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: USERNAME/test_repo:latest
+        tags: USERNAME/test_repo/test-Docker:latest
 
