@@ -28,5 +28,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: HunterW0lf/test_repo/test-Docker:latest
+        tags: hunterw0lf/test_repo/:latest
 
