@@ -56,6 +56,7 @@ jobs:
             run: |
               ls
               docker build ./test-Docker --tag ${{secrets.REGISTRY}}/test_repo:latest
+              docker images
               docker push ${{secrets.REGISTRY}}/test_repo:latest
 
 
