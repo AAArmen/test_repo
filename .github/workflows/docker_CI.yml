@@ -55,6 +55,7 @@ jobs:
           - name: 'Build Inventory Image'
             run: |
               ls
+              echo "${{ secrets.PASSWORD }}" | docker login ${{ secrets.REGISTRY }} -u ${{ secrets.USERNAME }} --password-stdin
               docker build ./test-Docker --tag ${{secrets.REGISTRY}}/test_repo:latest
               docker images
               docker push ${{secrets.REGISTRY}}/test_repo:latest
