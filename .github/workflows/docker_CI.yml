@@ -26,5 +26,5 @@ jobs:
         context: test-Docker/
         # file: Dockerfile
         push: true
-        tags: ${{ secrets.USERNAME }}/test-repo:latest
-        #tags: ${{ secrets.REGISTRY }}/test_repo:latest
+        #tags: ${{ secrets.USERNAME }}/test-repo:latest
+        tags: ${{ secrets.REGISTRY }}/test_repo:latest
