@@ -55,7 +55,7 @@ jobs:
           - name: 'Build Inventory Image'
             run: |
               ls
-              docker build . --tag ${{secrets.REGISTRY}}/test_repo:latest
+              docker build ./test-Docker --tag ${{secrets.REGISTRY}}/test_repo:latest
               docker push ${{secrets.REGISTRY}}/test_repo:latest
 
 
