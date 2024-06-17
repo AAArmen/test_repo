@@ -23,23 +23,21 @@ jobs:
         registry: ${{secrets.REGISTRY}}
         username: ${{secrets.USERNAME}}
         password: ${{secrets.PASSWORD}}
-    # - name: Login to DockerHub
-    #   run: echo "${{ secrets.PASSWORD }}" | docker login ${{ secrets.REGISTRY }} -u ${{ secrets.USERNAME }} --password-stdin
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
         context: test-Docker/
         builder: ${{ steps.buildx.outputs.name }}
-        # file: Dockerfile
+        file: Dockerfile
         push: true
-        #tags: ${{ secrets.USERNAME }}/test-repo:latest
         tags: ${{ secrets.REGISTRY }}/test_repo:latest
+
+
+
 #         #tags: '${{ secrets.REGISTRY_URL }}/my-project/server:latest'
 #         cache-from: type=registry,ref=${{ secrets.REGISTRY }}/test_repo/server:buildcache'
 #         cache-to: type=registry,ref=${{ secrets.REGISTRY }}/test_repo/server:buildcache,mode=max'
-
-
 
 # jobs:
 #       push-store-image:
